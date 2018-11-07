@@ -11,7 +11,6 @@
 *******************************************************************************/
 Ant::Ant() {}
 
-
 /*******************************************************************************
  * Ant(int, int, int, int)
  * Descripton: Initializes the game board based on user inputs--which are passed
@@ -19,15 +18,15 @@ Ant::Ant() {}
  * ant is placed in its starting coordinate.  The board is printed to output.
 *******************************************************************************/
 void Ant::setBoard(int r, int c, int sR, int sC) {
-  	rows = r;
-  	columns = c;
+	rows = r;
+	columns = c;
 	startR = sR;
 	startC = sC;
 	direction = NORTH;
 	xPos = startC - 1;		// Adjust for 0 index
 	yPos = startR - 1;
 
-  	// Dynamically allocate the game board based on user input
+	// Dynamically allocate the game board based on user input
 	board = new char*[rows];
 	for(int i = 0; i < rows; i++)	{
 		board[i] = new char[columns];
@@ -40,14 +39,14 @@ void Ant::setBoard(int r, int c, int sR, int sC) {
 		}
 	}
 
-  	// Starting location for ant
-  	setAnt();
+	// Starting location for ant
+	setAnt();
 
-    cout << "Initial Setup:" << endl;
+	cout << "Initial Setup:" << endl;
 
-  	printBoard();
+	printBoard();
 
-    cout << "-----Prepare to Launch-----" << endl;
+	cout << "-----Prepare to Launch-----" << endl;
 }
 
 
@@ -56,11 +55,11 @@ void Ant::setBoard(int r, int c, int sR, int sC) {
  * Descripton: Prints the game board to the screen.
 *******************************************************************************/
 void Ant::printBoard() {
-  for (int i = 0; i < rows; i++) {
-		  for (int j = 0; j < columns; j++) {
-			  cout << board[i][j] << " ";
-		  }
-		  cout << endl;
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			cout << board[i][j] << ' ';
+		}
+		cout << endl;
 	}
 }
 
@@ -75,63 +74,63 @@ void Ant::printBoard() {
 void Ant::makeMove() {
 	switch (getDirection())	{
 		case NORTH:								// --Logic repeats for each case--
-      		if ((getY() - 1) < 0) {				// Protects movement off board
-        		setDirection(SOUTH);
-        		moveAnt();
-      		} else {
-				if(getNext(-1, 0) == "white") { // White space ahead, turn right
+			if ((getY() - 1) < 0) {				// Protects movement off board
+				setDirection(SOUTH);
+				moveAnt();
+			} else {
+				if(getNext(-1, 0) == "white") {	// White space ahead, turn right
 					moveAnt();
 					setDirection(EAST);
-			  	} else {						// Black space ahead, turn left
+				} else {						// Black space ahead, turn left
 					moveAnt();
-				  	setDirection(WEST);
-			  	}
-      		}
+					setDirection(WEST);
+				}
+			}
 			break;
 
 		case EAST:
-      		if ((getX() + 1) >= columns) {
-        		setDirection(WEST);
-        		moveAnt();
-      		} else {
-			  	if(getNext(0, 1) == "white") {
-				  	moveAnt();
-				  	setDirection(SOUTH);
-			  	} else {						
-				  	moveAnt();
-				  	setDirection(NORTH);
-			  	}
-      		}
+			if ((getX() + 1) >= columns) {
+				setDirection(WEST);
+				moveAnt();
+			} else {
+				if (getNext(0, 1) == "white") {
+					moveAnt();
+					setDirection(SOUTH);
+				} else {						
+					moveAnt();
+				setDirection(NORTH);
+				}
+			}
 			break;
 
 		case SOUTH:
-      		if((getY() + 1) >= rows) {
-        		setDirection(NORTH);
-        		moveAnt();
-      		} else {
-			  	if(getNext(1, 0) == "white") {
-				  	moveAnt();
-				  	setDirection(WEST);
-			  	} else {
-				  	moveAnt();
-				  	setDirection(EAST);
-			  	}
-      		}
+			if((getY() + 1) >= rows) {
+				setDirection(NORTH);
+				moveAnt();
+			} else {
+				if(getNext(1, 0) == "white") {
+					moveAnt();
+					setDirection(WEST);
+				} else {
+					moveAnt();
+					setDirection(EAST);
+				}
+			}
 			break;
 
 		case WEST:
-      		if((getX() - 1) < 0) {
-        		setDirection(EAST);
-        		moveAnt();
-      		} else {
-			  	if(getNext(0, -1) == "white") {
-				  	moveAnt();
-				  	setDirection(NORTH);
-			  	} else {
-				  	moveAnt();
-				  	setDirection(SOUTH);
-			  	}
-      		}
+			if((getX() - 1) < 0) {
+				setDirection(EAST);
+				moveAnt();
+			} else {
+				if(getNext(0, -1) == "white") {
+					moveAnt();
+					setDirection(NORTH);
+				} else {
+					moveAnt();
+					setDirection(SOUTH);
+				}
+			}
 			break;
 	}
 	printBoard();
