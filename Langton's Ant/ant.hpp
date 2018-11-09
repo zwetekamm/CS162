@@ -1,8 +1,8 @@
-/*******************************************************************************
+/*****************************************************************************
  * Author: Zachary Wetekamm
  * Date: 07/1/18
  * Description: Header file for the class Ant.
-*******************************************************************************/
+*****************************************************************************/
 #ifndef ANT_HPP
 #define ANT_HPP
 
@@ -16,24 +16,23 @@ using std::string;
 //variables for ant movement direction
 enum cardinal {NORTH, EAST, SOUTH, WEST};
 
-class Ant
-{
+class Ant {
 	private:
 		cardinal direction;
 		char **board;
 		int rows,
-			columns,
-			startR,
-			startC,
-			xPos,
-			yPos;
+            columns,
+            startR,
+            startC,
+            xPos,
+            yPos;
 
 	public:
     	Ant();
 		void setBoard(int, int, int, int);
 		void printBoard();
 		void makeMove();
-		void moveAnt(); 
+		void moveAnt();
 		void setDirection(cardinal);
 		cardinal getDirection();
 		int getX();

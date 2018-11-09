@@ -1,13 +1,13 @@
-/*******************************************************************************
+/*****************************************************************************
  * Author: Zachary Wetekamm
  * Date: 07/01/18
- * Description: Main file for the Langton's Ant simulation, which uses the class
+ * Description: Main file for Langton's Ant simulation, which uses the class
  * Ant and functions from menu.cpp for input validation. The ant will move
- * around a board with parameters set by the user.  The ant will change direction
+ * around a board with parameters set by the user. The ant changes direction
  * based on the 'color' of the next board--white space (' ') turn right, black
  * space ('#') turn left. Each time the ant ('*') moves onto any cell, it
- * changes the color to opposite. 
-*******************************************************************************/
+ * changes the color to opposite.
+*****************************************************************************/
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -25,25 +25,25 @@ int main() {
 	cout << "Extra Credit: Ask user for random starting location." << endl << endl;
 
 	int start;
-	
+
 	// Begin or exit; validates input
 	cout << "1. Begin Langton's Ant Simulation" << endl;
 	cout << "2. Exit the program" << endl;
 	getInt(start, 1, 2);
 
 	if (start == 2) {
-		cout << "Exiting..." << endl;
-		return 1;
+        cout << "Exiting..." << endl;
+        return 1;
 	}
 
 	int nRows,
-		nColumns,
-		nSteps,
-		nStartRow,
-		nStartCol,
-		steps = 1;
+        nColumns,
+        nSteps,
+        nStartRow,
+        nStartCol,
+        steps = 1;
 	bool randomStart;	//extra credit variable
-	
+
 	cout << "How many rows for the board?" << endl;
 	getInt(nRows, 1, 15000);
 
@@ -58,17 +58,16 @@ int main() {
 
 	// If user confirms a random starting location for the ant
 	if(randomStart)	{
-		srand(time(NULL));
-		nStartRow = rand() % nRows + 1;
-		nStartCol = rand() % nColumns + 1;
+        nStartRow = rand() % nRows + 1;
+        nStartCol = rand() % nColumns + 1;
 
-		cout << "Ant will begin on row " << nStartRow << " and column " << nStartCol << endl << endl;
+        cout << "Ant will begin on row " << nStartRow << " and column " << nStartCol << endl << endl;
 	} else {
-		cout << "At which row will the ant begin? Must be within range." << endl;
-		getInt(nStartRow, 1, nRows);
+        cout << "At which row will the ant begin? Must be within range." << endl;
+        getInt(nStartRow, 1, nRows);
 
-		cout << "At which column will the ant begin? Must be witin range." << endl;
-		getInt(nStartCol, 1, nColumns);
+        cout << "At which column will the ant begin? Must be witin range." << endl;
+        getInt(nStartCol, 1, nColumns);
 	}
 
   	Ant game;
@@ -78,9 +77,9 @@ int main() {
 
   	// Begin the simulation
   	while(steps <= nSteps) {
-  		cout << "Step " << steps << ":" << endl;
-  		game.makeMove();
-  		steps++;
+        cout << "Step " << steps << ":" << endl;
+        game.makeMove();
+        steps++;
   	}
 
   	// Free the allocated memory
