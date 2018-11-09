@@ -193,7 +193,7 @@ void Ant::moveAnt() {
  * Description: Returns the current ant direction.
 *******************************************************************************/
 cardinal Ant::getDirection() {
-	return direction;
+    return direction;
 }
 
 
@@ -202,7 +202,7 @@ cardinal Ant::getDirection() {
  * Description: Assigns a new cardinal value to the direction variable.
 *******************************************************************************/
 void Ant::setDirection(cardinal d) {
-	direction = d;
+    direction = d;
 }
 
 
@@ -211,7 +211,7 @@ void Ant::setDirection(cardinal d) {
  * Description: Returns the X position.
 *******************************************************************************/
 int Ant::getX() {
-	return xPos;
+    return xPos;
 }
 
 
@@ -220,7 +220,7 @@ int Ant::getX() {
  * Description: Assigns a new value to xPos.
 *******************************************************************************/
 void Ant::setX(int x) {
-	xPos += x;
+    xPos += x;
 }
 
 
@@ -229,7 +229,7 @@ void Ant::setX(int x) {
  * Description: Returns the Y position.
 *******************************************************************************/
 int Ant::getY() {
-	return yPos;
+    return yPos;
 }
 
 
@@ -238,7 +238,7 @@ int Ant::getY() {
  * Description: Assigns a new value to yPos.
 *******************************************************************************/
 void Ant::setY(int y) {
-	yPos += y;
+    yPos += y;
 }
 
 
@@ -248,8 +248,8 @@ void Ant::setY(int y) {
  * Used to determine the ant's next move.
 *******************************************************************************/
 std::string Ant::getNext(int y, int x) {
-	int newY = yPos + y;
-	int newX = xPos + x;
+    int newY = yPos + y;
+    int newX = xPos + x;
 
     if (board[newY][newX] == '#') {
         return "black";
@@ -278,7 +278,7 @@ void Ant::setCurrent(string s) {
  * Description: Assigns the ant to the current board position.
 *******************************************************************************/
 void Ant::setAnt() {
-	board[yPos][xPos] = '*';
+    board[yPos][xPos] = '*';
 }
 
 
