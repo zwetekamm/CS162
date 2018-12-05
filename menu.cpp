@@ -92,7 +92,7 @@ void getString(string& input) {
 }
 
 
-//validate user input for boolean; will adjust for each project assignment
+//validate user input for boolean
 void getBool(bool& input) {
     string temp;
     bool valid;
