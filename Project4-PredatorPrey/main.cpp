@@ -1,7 +1,4 @@
 /*************************************************************************
- * Program Name: Predator Prey Simulation (Group Project) - main.cpp
- * Names:        Gabriel Cata, Drew Childs, William Conway,
- *               Michael Seehafer, Zachary Wetekamm
  * Date:         July 29, 2018
  * Description:  This program simulates a predator-prey relationship
  *               between Doodlebugs (predators) and Ants (prey). It sets
