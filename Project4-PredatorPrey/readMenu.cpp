@@ -1,7 +1,4 @@
 /*************************************************************************
- * Program Name: Predator Prey Simulation (Group Project) - readMenu.cpp
- * Names:        Gabriel Cata, Drew Childs, William Conway,
- *               Michael Seehafer, Zachary Wetekamm
  * Date:         July 29, 2018
  * Description:  This is the implementation file for the function readMenu().
  *               This function has parameters of an array of string items
