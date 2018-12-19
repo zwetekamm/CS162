@@ -1,7 +1,4 @@
 /*************************************************************************
- * Program Name: Predator Prey Simulation (Group Project) - Grid.cpp
- * Names:        Gabriel Cata, Drew Childs, William Conway,
- *               Michael Seehafer, Zachary Wetekamm
  * Date:         July 29, 2018
  * Description:  This is the implementation file for the class Grid. It
  *               represents a 2D grid of Ants, Doodlebugs, and blank spaces.
