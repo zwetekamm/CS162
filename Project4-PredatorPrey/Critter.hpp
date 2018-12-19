@@ -1,7 +1,4 @@
 /*************************************************************************
- * Program Name: Predator Prey Simulation (Group Project) - Critter.hpp
- * Names:        Gabriel Cata, Drew Childs, William Conway,
- *               Michael Seehafer, Zachary Wetekamm
  * Date:         July 29, 2018
  * Description:  This is the specification file for the class Critter.
  *               This is an abstract base class, containing a row and
