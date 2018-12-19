@@ -1,7 +1,4 @@
 /*************************************************************************
- * Program Name: Predator Prey Simulation (Group Project) - Doodlebug.hpp
- * Names:        Gabriel Cata, Drew Childs, William Conway,
- *               Michael Seehafer, Zachary Wetekamm
  * Date:         July 29, 2018
  * Description:  This is the specification file for the class Doodlebug.
  *               A Doodlebug breeds every 8 time steps, has Type BUG, moves
